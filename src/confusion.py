@@ -1,13 +1,8 @@
 import cv2 as cv
-from sklearn.metrics import f1_score
 import numpy as np
 from os.path import split, splitext, isdir, join
-from os import mkdir, listdir
-import matplotlib
-matplotlib.use('Agg')
-import matplotlib.pyplot as plt
-from PIL import Image
-from glob import glob
+from os import mkdir
+from utils import load_img, binarize_img, get_mask, get_f1, get_comparison
 
 def get_confusion(img_path, label_path, pred_path, prefix_dir=''):
     # in:
@@ -48,7 +43,11 @@ def get_confusion(img_path, label_path, pred_path, prefix_dir=''):
     
     # get the f1-score for the binarized image
     pred_f1 = get_f1(label_binary, pred_binary)
-    pred_f1 = round(pred_f1, 4)
+    pred_f1= round(pred_f1, 4)
+    
+    # create directory to hold results (only create if one is provided)
+    if len(prefix_dir) and (not isdir(prefix_dir)):
+        mkdir(prefix_dir)
     
     # define destination for saving masks 
     mask_dir = join(prefix_dir, 'confusion_masks')

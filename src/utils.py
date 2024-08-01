@@ -1,6 +1,9 @@
 import cv2 as cv
 from sklearn.metrics import f1_score
 import numpy as np
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
 
 def load_img(img_path, flag = cv.IMREAD_GRAYSCALE):
     # in: 

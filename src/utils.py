@@ -4,6 +4,8 @@ import numpy as np
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+from glob import glob
+from os.path import join
 
 def load_img(img_path, flag = cv.IMREAD_GRAYSCALE):
     # in: 
@@ -80,3 +82,10 @@ def get_comparison(imgs: list, titles: list, destination):
     plt.subplots_adjust(wspace=0.05)
 
     fig.savefig(destination, bbox_inches="tight")
+
+def get_img_fns(path):
+    path_wildcard = join(path, '*')
+    fns_w_path = glob(path_wildcard)
+    fns_sorted = sorted(fns_w_path)
+
+    return fns_sorted

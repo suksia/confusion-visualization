@@ -8,6 +8,4 @@ Given the human label, which acts as the ground-truth, the correctness of each p
 - False positive (type 1 error)
 - False negative (type 2 error)
 
-It may be informative to see where predictions were correct/incorrect given the human label, and to further see the type of error made by the machine. This visualizes the disagreement between human and machine.
-
-# 
+It may be informative to see where predictions were correct/incorrect given the human label, and to further see the type of error made by the machine. This visualizes the disagreement between human and machine and helps show biased labelling.

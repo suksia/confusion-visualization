@@ -9,3 +9,7 @@ Given the human label, which acts as the ground-truth, the correctness of each p
 - False negative (type 2 error)
 
 It may be informative to see where predictions were correct/incorrect given the human label, and to further see the type of error made by the machine. This visualizes the disagreement between human and machine and helps show biased labelling.
+
+# Usage
+
+Run the ```src/demo.py``` with paths that lead to the raw training images, human labels, and prediction outputs. Use the ```--help``` flag to see more information.

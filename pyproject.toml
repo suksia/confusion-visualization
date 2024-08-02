@@ -1,0 +1,18 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "confusion-visualization"
+version = "1.0"
+dynamic = ["version"]
+dependencies = [
+   "opencv-python >= 4.10.0.84"
+   "scikit-learn >= 1.5.1"
+   "matplotlib >= 3.9.1"
+]
+authors = [
+   {name = "Aiden Ochoa", email = "aio5165@psu.edu"}
+]
+readme = "README.md"
+license = {file = LICENSE}

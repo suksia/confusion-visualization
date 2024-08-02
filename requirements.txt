@@ -1,4 +1,0 @@
-python >= 3.6
-opencv-python >= 4.10.0.84 (what was installed)
-scikit-learn >= 1.5.1
-matplotlib >= 3.9.1

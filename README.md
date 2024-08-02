@@ -12,4 +12,18 @@ It may be informative to see where predictions were correct/incorrect given the 
 
 # Usage
 
-Run the ```src/demo.py``` with paths that lead to the raw training images, human labels, and prediction outputs. Use the ```--help``` flag to see more information.
+The script ```src/demo.py``` performs a demo of the program using some provided data in ```data/```. It can also be used with custom data by supplying arguments that define paths to the top-level data directory and its sub-directories containing training images, labels, and output predictions. The user can also define a custom path (absolute, or relative) to a directory that will contain program output. Use ```demo.py --help``` to see more information about customizing supplied paths.
+
+Predictions should be a result of binary segmentation; multiclass objectives are not supported. Each image/label/prediction pair should also have the same shape and filenames, though different (but consistent) extensions can be used.
+
+# Output Results
+
+The program creates a new directory that contains three sub-directories:
+
+- ```confusion_masks/```
+    - Standalone images with each pixel colored according to the confusion mask
+- ```confusion_compare/```
+    - Raw images, human labels, and confusion masks plotted together with the F1 found from Otsu thresholding
+- ```prediction_compare/```
+    - Raw images, human labels, and raw output predictions plotted together
+

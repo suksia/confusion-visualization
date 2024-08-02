@@ -19,7 +19,7 @@ parser.add_argument('--image_path',
                     metavar='I', 
                     type=str, 
                     help='path (relative to data_path) to the images used for training', 
-                    default=join(PATH, '../data/labels/'))
+                    default=join(PATH, '../data/images/'))
 
 parser.add_argument('--label_path', 
                     metavar='L', 
